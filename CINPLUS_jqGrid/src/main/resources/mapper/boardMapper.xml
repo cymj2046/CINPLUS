@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+
+<!-- 전체목록 -->
+
+<select id="listAll" resultType="com.spring.cip.vo.BoardVO">
+	select
+		DISTINCT
+		 A.MBR_NM
+	    ,A.MBR_USER_ID
+	    ,A.MBR_PHONE
+	    ,B.BZPP_ORDER_NO
+	    ,C.PDT_NO
+	    ,C.PDT_NM
+	    ,B.BZPP_NM
+	    ,B.BZPP_PHONE
+	    ,B.BZPP_ADDR
+	    ,A.DEL_YN
+	from
+		tbaxmm003 as A 
+	    join tbaxbm001 as B
+	    join tbaxpm001 as C
+        on A.BZPP_ORDER_NO = B.BZPP_ORDER_NO
+	    and B.PDT_SQNO = C.PDT_SQNO
+	where 1=1
+	
+	<include refid="search" />	
+	
+</select>
+	<sql id="search">
+		<if test="MBR_NM neq null and MBR_NM neq '' ">
+    		and A.MBR_NM like concat('%',#{MBR_NM},'%')
+		</if>
+		<if test="BZPP_NM neq null and BZPP_NM neq '' ">
+    		and B.BZPP_NM like concat('%',#{BZPP_NM},'%')
+		</if>
+	</sql>
+	
+</mapper>
