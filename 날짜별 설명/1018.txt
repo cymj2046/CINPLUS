@@ -1,0 +1,26 @@
+10.18
+3:35 설명
+컨트롤러에서 서비스를 가져다가 쓴다. (어노테이션)
+
+UX 
+UI
+
+패키지 구조
+
+mbrcont		>> 변수제어하는 곳 받아온 데이터를 고치거나 형변환하거나 등등
+mbrser		>> 전달자 
+mbrserIpml	>> 전달자2
+mbrvo <> dto 	>> 변수 선언
+mbrdao <> mapper >> 쿼리호출
+mbr.java
+
+.xml 
+
+서브쿼리 안에 >> CMMN or CMN = 공통코드명
+CRNO 법인넘버
+
+<if test="mbrUserId neq null and mbrUserId neq ('')">
+    and TEST_COLUMN = #{value}
+</if>
+
+

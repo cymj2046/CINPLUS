@@ -1,0 +1,26 @@
+10.20
+1:00~2시 구조 설명 및 활용방법
+@controller
+
+어노테이션의 기능 - 상속
+@RequestMapping 
+
+@Requestbody
+
+
+단축키 
+Ctrl+shift+R : 전체 리소스에서 파일 찾기
+
+Ctrl + F : 키워드 검색 (해당 소스에서만)
+
+Ctrl + L : line찾기
+
+Ctrl + K : 파일안에서 동일한 단어 찾기
+
+Ctrl + H : 키워드 검색 (프로젝트 전체에서) ex. for( 로 찾기 -> for문이 찾아짐
+
+Ctrl+Alt+R : 톰캣 서버 실행
+
+Ctrl+shift+C : 주석달기
+
+2시 ~50분 피드백

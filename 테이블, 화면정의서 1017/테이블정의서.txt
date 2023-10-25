@@ -1,0 +1,52 @@
+테이블 정의서
+
+TBAXBM001(사업자정보)
+PK BZPP_SQNO		VARCHAR(8)	사업자정보일련번호	NOT NULL
+   PDT_SQNO		VARCHAR(8)	상품정보일련번호		FK(제품정보)
+   BZPP_NO		VARCHAR(10)	사업자번호
+   BZPP_NM		VARCHAR(20)	사업자명
+   BZPP_USER_ID		VARCHAR(20)	사업자아이디	
+   BZPP_USER_PWD		VARCHAR(20)	사업자아이디비밀번호
+   BZPP_TEL		VARCHAR(11)	사업장전화번호
+   BZPP_PHONE		VARCHAR(11)	사업주휴대폰번호
+   BZPP_ADDR		VARCHAR(200)	사업자주소명
+   BZPP_ORDER_NO		VARCHAR(6)	주문번호
+   UPDATE_DATE		DATE(16)		최근수정날짜
+   LST_LGN_DATE		DATE(16)		마지막로그인날짜
+   DEL_YN		VARCHAR(1)	삭제유무
+
+
+TBAXSM001(사이트정보)
+PK SITE_SQNO		VARCHAR(8)	사이트일련번호		 NOT NULL
+   BZPP_SQNO		VARCHAR(8)	사업자정보일련번호	FK(사업자정보)
+   MBR_SQNO		VARCHAR(8)	회원정보일련번호		FK(회원정보)
+   SITE_NO		VARCHAR(10)	사이트번호
+   SITE_NM		VARCHAR(100)	사이트명
+   SITE_TEL		VARCHAR(11)	사이트전화번호
+   SITE_ADDR		VARCHAR(100)	사이트주소명
+   UPDATE_DATE		DATE(16)		최근수정날짜
+   DEL_YN		VARCHAR(1)	삭제유무
+
+
+TBAXMM003(회원정보)
+PK MBR_SQNO		VARCHAR(8)	회원정보일련번호		NOT NULL
+   MBR_NO		VARCHAR(10)	회원번호
+   MBR_NM		VARCHAR(20)	회원명		
+   MBR_USER_ID		VARCHAR(20)	회원아이디	
+   MBR_USER_PWD		VARCHAR(20)	회원아이디비밀유저	
+   MBR_TEL		VARCHAR(11)	회원전화번호	
+   MBR_PHONE		VARCHAR(11)	회원휴대폰번호
+   MBR_ADDR		VARCHAR(200)	회원주소
+   BZPP_ORDER_NO		VARCHAR(6)	주문번호
+   SITE_SQNO		VARCHAR(8)	사이트일련번호		FK(사이트정보)
+   LST_LGN_DATE		DATE(16)		마지막로그인날짜
+   UPDATE_DATE		DATE(16)		최근수정날짜
+   DEL_YN		VARCHAR(1)	삭제유무
+
+
+TBAXPM001(제품정보)
+PK PDT_SQNO		VARCHAR(8)	제품정보일련번호  	NOT NULL
+   PDT_NM		VARCHAR(100)	제품명		
+   PDT_NO		VARCHAR(10)	제품번호
+   BZPP_ORDER_NO		VARCHAR(6)	주문번호		
+   DEL_YN		VARCHAR(1)	삭제유무
